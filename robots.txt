@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://upnextech.pro/sitemap.xml
