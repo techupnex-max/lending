@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Публичная оферта — UPNEX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 32px 16px 60px;
+    background-color: #111214;
+    color: #17181a;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .doc-ActionsBar {
+    max-width: 860px;
+    margin: 0 auto 16px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+  .back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border: 1px solid rgba(255,255,255,0.28);
+    border-radius: 999px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .back-btn:hover {
+    background: #b6ff65;
+    color: #111214;
+    border-color: #b6ff65;
+  }
+  .print-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #b6ff65;
+    color: #111214;
+    border: 0;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .page-sheet {
+    max-width: 860px;
+    margin: 0 auto;
+    background-color: #f6f7f9;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+    overflow: hidden;
+  }
+  .top-banner {
+    padding: 28px 36px 22px 36px;
+    background-color: #111214;
+    color: #ffffff;
+    border-bottom: 4px solid #8ec63f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .brand-title {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    margin: 0 0 6px 0;
+    color: #ffffff;
+  }
+  .brand-dot {
+    color: #b6ff65;
+  }
+  .doc-subtitle {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #b6ff65;
+    margin: 0;
+    font-weight: 700;
+  }
+  .banner-right {
+    text-align: right;
+    font-size: 12.5px;
+    color: #b8bcc2;
+    line-height: 1.5;
+  }
+  .banner-right a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .sheet-content {
+    padding: 32px 36px 40px 36px;
+  }
+  .doc-header-box {
+    background-color: #ffffff;
+    border: 1px solid #d8dde3;
+    padding: 18px 20px;
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 18px;
+    line-height: 1.35;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    color: #111214;
+  }
+  .meta-line {
+    font-size: 13px;
+    color: #555b62;
+    margin: 0;
+  }
+  h2 {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #111214;
+    text-transform: uppercase;
+    border-left: 4px solid #111214;
+    padding-left: 11px;
+    margin: 26px 0 12px 0;
+  }
+  p {
+    margin: 0 0 10px 0;
+    text-align: justify;
+  }
+  .clause-num {
+    font-weight: 700;
+    color: #111214;
+  }
+  .alert-box {
+    background-color: #eef5e6;
+    border: 1px solid #9fc46b;
+    padding: 15px 18px;
+    margin: 14px 0 16px 0;
+  }
+  .alert-title {
+    font-weight: 700;
+    font-size: 13px;
+    color: #1f3308;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .table-wrap {
+    overflow-x: auto;
+    margin: 12px 0 18px 0;
+  }
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    font-size: 13.5px;
+  }
+  .price-table th {
+    background-color: #1e2125;
+    color: #ffffff;
+    text-align: left;
+    padding: 10px 12px;
+    font-weight: 700;
+    border: 1px solid #1e2125;
+  }
+  .price-table td {
+    padding: 9px 12px;
+    border: 1px solid #d5d9e0;
+    vertical-align: top;
+  }
+  .price-table tr:nth-child(even) td {
+    background-color: #f9fafb;
+  }
+  .sig-block {
+    margin-top: 28px;
+    background-color: #ffffff;
+    border: 1px solid #cfd5de;
+    padding: 20px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .sig-col-left {
+    flex: 1 1 320px;
+  }
+  .sig-col-right {
+    flex: 0 0 auto;
+    text-align: right;
+  }
+  .sig-box-inner {
+    display: inline-block;
+    text-align: center;
+    border-top: 1px solid #aeb6c2;
+    padding-top: 8px;
+    width: 210px;
+  }
+  .sig-img {
+    height: 64px;
+    width: auto;
+    display: block;
+    margin: 0 auto 4px auto;
+  }
+  .sig-caption {
+    font-size: 12px;
+    color: #555b62;
+  }
+  .stamp-badge {
+    display: inline-block;
+    border: 1.5px solid #111214;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #111214;
+  }
+  .sheet-footer {
+    border-top: 1px solid #d8dde3;
+    padding: 14px 36px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #6c757d;
+    background: #eef0f3;
+  }
+  @media (max-width: 640px) {
+    body { padding: 12px 8px 36px; }
+    .top-banner, .sheet-content, .sheet-footer { padding-left: 18px; padding-right: 18px; }
+    .banner-right { text-align: left; }
+    h1 { font-size: 15px; }
+    p { text-align: left; }
+  }
+  @media print {
+    body { background: #f6f7f9; padding: 0; }
+    .doc-ActionsBar { display: none; }
+    .page-sheet { box-shadow: none; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="doc-ActionsBar">
+  <a href="index.html" class="back-btn">← Вернуться на главную UPNEX</a>
+  <button class="print-btn" onclick="window.print()">Скачать / Печать PDF</button>
+</div>
+
+<div class="page-sheet">
+  <div class="top-banner">
+    <div class="banner-left">
+      <div class="brand-title">UPNEX<span class="brand-dot">.</span></div>
+      <div class="doc-subtitle">Официальная правовая документация // AI • Automation • Digital</div>
+    </div>
+    <div class="banner-right">
+      Официальный сайт: <a href="https://upnextech.pro">https://upnextech.pro</a><br>
+      Telegram: <a href="https://t.me/husq52" target="_blank" rel="noopener noreferrer">@husq52</a><br>
+      Редакция от 29.10.2026 г.
+    </div>
+  </div>
+
+  <div class="sheet-content">
+    <div class="doc-header-box">
+      <h1>Публичная оферта (Договор) на оказание услуг по разработке ПО, веб-сайтов, Telegram-ботов и автоматизации</h1>
+      <p class="meta-line">Настоящий документ в соответствии со статьями 435 и 437 Гражданского кодекса Российской Федерации (ГК РФ) является официальной публичной офертой цифровой студии <strong>UPNEX</strong> и содержит все существенные условия оказания услуг и ответственности Сторон.</p>
+    </div>
+
+    <h2>1. Термины и общие положения</h2>
+    <p><span class="clause-num">1.1.</span> <strong>Исполнитель</strong> — цифровая студия <strong>UPNEX</strong> (официальный интернет-ресурс: <strong>https://upnextech.pro</strong>, официальный контакт для связи и приёма заявок в мессенджере Telegram: <strong>@husq52</strong>).</p>
+    <p><span class="clause-num">1.2.</span> <strong>Заказчик</strong> — любое физическое лицо, индивидуальный предприниматель или юридическое лицо, осуществившее Акцепт настоящей Оферты.</p>
+    <p><span class="clause-num">1.3.</span> <strong>Акцепт Оферты</strong> — полное и безоговорочное принятие Заказчиком условий настоящего Договора путём направления заявки через сайт <strong>upnextech.pro</strong>, обращения к представителю Исполнителя в Telegram (<strong>@husq52</strong>), согласования технического задания (ТЗ), передачи данных для разработки или внесения оплаты (частичной либо полной). С момента Акцепта настоящий Договор считается заключённым в письменной форме (п. 3 ст. 434 и п. 3 ст. 438 ГК РФ) и обладает полной юридической силой.</p>
+    <h2>2. Предмет договора и стоимость услуг</h2>
+    <p><span class="clause-num">2.1.</span> Исполнитель обязуется по заданию Заказчика оказать услуги по проектированию, разработке, настройке и внедрению веб-сайтов, Telegram-ботов (включая решения с искусственным интеллектом), баз данных на SQLite, интеграций с Google Sheets и CRM-системами, а Заказчик обязуется принять и оплатить выполненные работы.</p>
+    <p><span class="clause-num">2.2.</span> Базовая стоимость услуг определяется утверждённым прайс-листом Исполнителя (итоговая смета и сроки фиксируются Сторонами в переписке до начала работ):</p>
+
+    <div class="table-wrap">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th style="width: 14%;">Код</th>
+            <th style="width: 62%;">Наименование услуги / Направление разработки</th>
+            <th style="width: 24%;">Базовая стоимость</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>WEB-01</td>
+            <td>Одностраничный сайт (лендинг): структура, дизайн, адаптив, форма заявки</td>
+            <td>4 500 ₽</td>
+          </tr>
+          <tr>
+            <td>WEB-02</td>
+            <td>Сайт до 3 страниц (для компаний с несколькими услугами/направлениями)</td>
+            <td>7 000 ₽</td>
+          </tr>
+          <tr>
+            <td>WEB-03</td>
+            <td>Многостраничный сайт (до 5 страниц, каталог, расширенная структура)</td>
+            <td>12 500 ₽</td>
+          </tr>
+          <tr>
+            <td>WEB-ADD</td>
+            <td>Дополнительная страница к любому сайту</td>
+            <td>+1 000 ₽</td>
+          </tr>
+          <tr>
+            <td>BOT-01</td>
+            <td>Чат-бот (с ИИ внутри или без) с ответами на вопросы</td>
+            <td>от 4 000 ₽</td>
+          </tr>
+          <tr>
+            <td>BOT-02</td>
+            <td>Бот с каталогом из Google Sheets</td>
+            <td>от 5 500 ₽</td>
+          </tr>
+          <tr>
+            <td>DB-03</td>
+            <td>Создание и настройка базы данных на SQLite</td>
+            <td>от 3 000 ₽</td>
+          </tr>
+          <tr>
+            <td>INT-04</td>
+            <td>Интеграция бота с Google Sheets</td>
+            <td>от 3 000 ₽</td>
+          </tr>
+          <tr>
+            <td>AUT-05</td>
+            <td>Автоматизация обработки заявок</td>
+            <td>от 4 000 ₽</td>
+          </tr>
+          <tr>
+            <td>CRM-06</td>
+            <td>Интеграция CRM-системы</td>
+            <td>от 5 000 ₽</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>3. Порядок запроса учётных и персональных данных аккаунтов</h2>
+    <p><span class="clause-num">3.1.</span> Заказчик уведомлён и соглашается с тем, что для технической реализации, тестирования, привязки и развёртывания Telegram-ботов, пользовательских автоматизаций (UserBot / MTProto / Bot API), настройки вебхуков, баз данных, платёжных шлюзов, доменов, хостинга, таблиц Google Sheets и CRM-систем Исполнителю <strong>может потребоваться доступ к персональным и учётным данным аккаунта Заказчика</strong>.</p>
+    <p><span class="clause-num">3.2.</span> В зависимости от специфики задачи Исполнитель вправе запросить у Заказчика исключительно те данные, которые технически необходимы для выполнения заказа:</p>
+    <p>— API-токены (BotFather), ключи <code>api_id</code> и <code>api_hash</code>, сервисные JSON-ключи Google Cloud / Google Sheets;<br>
+    — временные коды авторизации, сессионные данные или доступ к учётной записи (аккаунту) мессенджера, CRM, панели регистратора домена или хостинга;<br>
+    — идентификаторы администраторов (Telegram ID, username, номер телефона или e-mail, привязанный к сервису).</p>
+    <p><span class="clause-num">3.3.</span> Запрос указанных данных осуществляется только через официальный контакт Исполнителя (<strong>@husq52</strong>) и строго в объёме, минимально необходимом для выполнения согласованного Технического задания.</p>
+
+    <h2>4. Гарантии безопасности и полная ответственность за аккаунт Заказчика</h2>
+
+    <div class="alert-box">
+      <div class="alert-title">Юридическая гарантия сохранности аккаунта и право на судебную защиту</div>
+      Получая от Заказчика учётные, сессионные или персональные данные для разработки и настройки бота/системы, <strong>Исполнитель (UPNEX) принимает на себя полную юридическую и материальную ответственность за сохранность, безопасность и неприкосновенность переданного аккаунта</strong> в течение всего периода проведения работ. В случае нарушения Исполнителем обязательств Заказчик имеет безусловное право обратиться в суд на основании настоящей Публичной оферты.
+    </div>
+
+    <p><span class="clause-num">4.1.</span> При получении доступа к аккаунту или учётным данным Заказчика Исполнитель обязуется:</p>
+    <p>— использовать полученные данные <strong>исключительно для выполнения работ по заказу Заказчика</strong> (разработка, настройка, тестирование и запуск бота/интеграции);<br>
+    — обеспечивать строгую конфиденциальность (режим коммерческой тайны) в отношении любых паролей, токенов, сессий, переписок, клиентских баз и персональных данных Заказчика;<br>
+    — не передавать учётные данные третьим лицам, не копировать личную информацию и не совершать от имени аккаунта Заказчика никаких действий, не предусмотренных Техническим заданием (спам-рассылки, изменение настроек безопасности без согласования, отчуждение цифровых активов);<br>
+    — незамедлительно прекратить сеанс доступа и удалить временные авторизационные данные со своих устройств сразу после завершения работ и сдачи проекта Заказчику.</p>
+    <p><span class="clause-num">4.2.</span> <strong>Полная ответственность Исполнителя:</strong> Исполнитель несёт полную ответственность за умышленную компрометацию, хищение, несанкционированное использование или утерю контроля над аккаунтом Заказчика, произошедшие по прямой вине Исполнителя в период нахождения аккаунта в распоряжении Исполнителя.</p>
+    <p><span class="clause-num">4.3.</span> Исполнитель освобождается от ответственности только в тех случаях, когда блокировка или ограничение аккаунта со стороны платформы (например, антиспам-алгоритмами Telegram или стороннего сервиса) произошли вследствие самостоятельных действий Заказчика, нарушения Заказчиком правил площадки или предоставления Заказчиком скомпрометированных ранее третьими лицами доступов.</p>
+
+    <h2>5. Порядок сдачи-приёмки работ и передача прав</h2>
+    <p><span class="clause-num">5.1.</span> По завершении разработки Исполнитель демонстрирует Заказчику работу сайта, бота или автоматизации, передаёт исходный код (либо разворачивает проект на сервере/хостинге Заказчика) и передаёт все доступы.</p>
+    <p><span class="clause-num">5.2.</span> После приёмки работ и полной оплаты исключительные права на разработанный под заказ программный код и визуальные материалы переходят Заказчику. Заказчику рекомендуется сменить временные пароли и перевыпустить сервисные ключи (если работа велась через временный гостевой доступ).</p>
+
+    <h2>6. Разрешение споров и обращение в суд по оферте</h2>
+    <p><span class="clause-num">6.1.</span> Настоящая Публичная оферта регулируется и толкуется в соответствии с действующим законодательством Российской Федерации (Гражданский кодекс РФ, Федеральный закон № 152-ФЗ «О персональных данных», Закон РФ «О защите прав потребителей»).</p>
+    <p><span class="clause-num">6.2.</span> <strong>Доказательственная сила переписки:</strong> Стороны признают полную юридическую и доказательственную силу за электронной перепиской, логами передачи файлов, скриншотами и сообщениями в мессенджере Telegram (с участием официального аккаунта <strong>@husq52</strong>) и по электронной почте. Указанные материалы признаются письменными доказательствами при рассмотрении споров в суде (ст. 71 ГПК РФ, ст. 75 АПК РФ).</p>
+    <p><span class="clause-num">6.3.</span> В случае возникновения любых претензий, связанных с качеством оказания услуг, нарушением сроков или нарушением сохранности переданного для разработки аккаунта, потерпевшая Сторона направляет досудебную претензию в электронном виде (срок рассмотрения — 10 календарных дней).</p>
+    <p><span class="clause-num">6.4.</span> <strong>Право на подачу иска в суд:</strong> При недостижении согласия в досудебном порядке, а также в случае неправомерного использования аккаунта, утечки данных по вине Исполнителя или причинения имущественного ущерба, <strong>Заказчик вправе обратиться с исковым заявлением в суд общей юрисдикции или арбитражный суд в соответствии с законодательством РФ</strong>, используя настоящую Публичную оферту, чеки об оплате и историю переписки в качестве правового основания иска.</p>
+
+    <div class="sig-block">
+      <div class="sig-col-left">
+        <div class="stamp-badge">ОФИЦИАЛЬНЫЕ РЕКВИЗИТЫ ИСПОЛНИТЕЛЯ</div>
+        <p style="margin-bottom: 5px;"><strong>Наименование:</strong> Цифровая студия разработки и автоматизации <strong>UPNEX</strong></p>
+        <p style="margin-bottom: 5px;"><strong>Официальный сайт:</strong> https://upnextech.pro</p>
+        <p style="margin-bottom: 5px;"><strong>Официальный контакт в Telegram:</strong> https://t.me/husq52 (@husq52)</p>
+        <p style="margin-bottom: 0; font-size: 12.5px; color: #555b62;">Дата публикации и вступления редакции в силу: 29 октября 2026 г.</p>
+      </div>
+      <div class="sig-col-right">
+        <div class="sig-box-inner">
+          <svg class="sig-img" viewBox="0 0 220 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M48 18 C46 42, 48 66, 66 66 C84 66, 94 40, 98 18 C97 42, 97 58, 98 67" stroke="#141824" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M98 22 C115 14, 146 16, 146 33 C146 49, 114 48, 98 44" stroke="#141824" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M30 82 C82 79, 142 81, 190 85" stroke="#141824" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <div class="sig-caption">Уполномоченная подпись UPNEX</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sheet-footer">
+    <span>UPNEX // ПУБЛИЧНАЯ ОФЕРТА (upnextech.pro)</span>
+    <span>Редакция от 29.10.2026 г.</span>
+  </div>
+</div>
+
+</body>
+</html>
